@@ -1,11 +1,15 @@
-﻿
-string funcCheking(string Text){
-    Console.WriteLine(Text);
-    return Text;
+static string SearchData(string Token){
+    return Token + " This is a Date";
 }
 
-var Chenking = new Dictionary<string,object>(){
-    {"Key1",funcCheking("Текст1")}
+var cash = new Dictionary<string,string>{
+    {"Token1",SearchData("Token1")},
+    {"Token2",SearchData("Token2")}
 };
 
-Chenking['Key1'];
+Console.Write("Введите токен (Token1,Token2) : ");string Token = Console.ReadLine();
+if (cash.ContainsKey(Token)){
+    Console.Write(cash[Token]);
+}else{
+    Console.Write("Был введён ошибочный токен");
+}
